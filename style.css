@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+:root {
+    --size: calc();
+    font-family: 'Manrope', sans-serif;
+}
+html {
+    background-color: darkgrey;
+}
+#title {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 6vmin;
+    
+}
+#field{
+    position: relative;
+    margin: 0 auto;
+    width: 50vmin;
+    height: 50vmin;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-basis: 25%;
+    padding: 4vmin;
+    border-radius: 3vmin;
+}
+#start{
+    display: block;
+    margin: 0 auto;
+    height: 6vmin;
+    transform: translate(0,9vmin);
+    width: 58vmin;
+    padding-top: 1vmin;
+    padding-bottom: 14vmin;
+    border-radius: 3vmin;
+    text-align: center;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
+    font-size: 3vmin;
+    font-family: 'Manrope', sans-serif;
+}
+#start:hover{
+    
+    transform: translate(0,5vmin);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
+}
+.cell{
+    border-radius: 20%;
+    margin: 1%;
+    width: 23%;
+    height: 23%;
+    background-color: grey;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 0px 90px -5px rgba(0,0,0,0.75);
+}
+.tile{
+    width: 90%;
+    height: 90%;
+    border-radius: 20%;
+    
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    line-height: 10vmin;
+    font-size: 5vmin;
+    transition: 0.6s;
+}
+.tile:hover{
+    transform: translate(0vmin,0.5vmin);
+    transition: 0.2s;
+}
+.cell::before, #field::before{
+    content: "\200B";
+ }
+#c2{background-color: #F8F4E3} 
+#c4{background-color: #B4B0A2} 
+#c8{background-color: #928E82} 
+#c16{background-color: #817D72} 
+#c32{background-color: #706C61} 
+#c64{background-color: #4D4C46} 
+#c128{background-color: #3C3C38} 
+#c256{background-color: #333431} 
+#c512{background-color: #2A2B2A} 
+#c1024{background-color: #FF8966}
+#c2048{background-color: #E5446D} 
