@@ -1,6 +1,8 @@
 var cells = [];
 let test = "left"
 let count = 0;
+//fn je true, cislo neni u steny
+//dir udava, kde je relativne umisteno dalsi cislo v danem smeru
 var direction = {
     left: {
         fn: function(i) {return (i != 0 && i != 4 && i != 8 && i!=12)}, 
@@ -19,7 +21,7 @@ var direction = {
         dir: 4
     },
 }
-
+//Zacatek hry
 $(function(){
     $("#start").click(function(){
         if (tileCount() == 0){
@@ -36,7 +38,7 @@ $(function(){
         }
     }); 
 });
-
+//Ovladani
 $(document).keydown(function(e){
     console.log(e);
     switch(e.code){
@@ -50,19 +52,22 @@ $(document).keydown(function(e){
         case "KeyS": moveEvent("down"); break;
     }
 });
-
+//Pohyb cisel
 function moveEvent(moveDir){
     let d = direction[moveDir].dir;
     //Opakuj x3
     for(let j = 0; j<3; j++){
-        $(".tile").each(function(){           
+        $(".tile").each(function(){       
+              
             let index = $(this).parent().index()
             //Pokud se nehybe bunka do steny
             if (direction[moveDir].fn(index)){
-                
+                //Dalsi karta v danem smeru  
                 let otherTileParent = $(".cell").eq(index+d);
+                //Dalsi cislo v danem smeru
                 let otherTile = otherTileParent.find(".tile")
                  if (otherTileParent.html() == ''){
+                    //Premisteni na dalsi kartu
                     let temp = $(this).clone();
                     $(this).remove();
                     $(temp).appendTo(/*findNextEmpty(index)*/otherTileParent);
@@ -70,6 +75,7 @@ function moveEvent(moveDir){
             }
         })
     }
+    //Spojeni cisel
     $(".tile").each(function(){
         let index = $(this).parent().index()
         let otherTileParent = $(".cell").eq(index+d);
@@ -82,7 +88,6 @@ function moveEvent(moveDir){
             otherTileParent.html(div);
             $(this).remove()
             $("#score").text(count);
-                
         }
     });
     addRandomTile(1);
@@ -96,7 +101,7 @@ function addRandomTile(i){
             //Rekurze? Jaj :D
             addRandomTile(i+1);
         } else {
-            $(".cell").eq(random).html("<div class='tile' id='c2'>2</div>")
+            $(".cell").eq(random).html("<div class='tile' id='c2'>2</div>")//Kaeta s cislem 2
         }
     }
 }

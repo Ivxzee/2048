@@ -24,6 +24,7 @@ html {
     flex-basis: 25%;
     padding: 4vmin;
     border-radius: 3vmin;
+    box-shadow: 30px 30px 11px -15px rgba(0,0,0,0.75);
 }
 #start{
     display: block;
@@ -38,6 +39,8 @@ html {
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.6s;
     font-size: 3vmin;
     font-family: 'Manrope', sans-serif;
+    outline: 0;
+    
 }
 #start:hover{
     
@@ -54,7 +57,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0px 0px 90px -5px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 25px 10px rgba(0,0,0,0.75);
 }
 .tile{
     width: 90%;
@@ -66,6 +69,7 @@ html {
     line-height: 10vmin;
     font-size: 5vmin;
     transition: 0.6s;
+    
 }
 .tile:hover{
     transform: translate(0vmin,0.5vmin);
